@@ -61,11 +61,11 @@
     <img
       id="music_play"
       class="first first_no_play"
-      src="../assets/music_pointer.png"
+      src="../assets/music-pointer.png"
     />
-    <img id="music" src="../assets/music_disk.svg" />
+    <img id="music" src="../assets/music-disk.svg" />
     <audio ref="audio" autoplay="true" loop>
-      <source src="../assets/rise_of_dragon.mp3" type="audio/mpeg" />
+      <source src="../assets/rise-of-dragon.mp3" type="audio/mpeg" />
     </audio>
   </div>
 </template>
@@ -82,7 +82,7 @@
     height: 15vw;
     border: 3px solid red;
     border-radius: 50%;
-    top: 3vh;
+    top: 6px;
     right: 5vw;
     background: #ffffff;
   }

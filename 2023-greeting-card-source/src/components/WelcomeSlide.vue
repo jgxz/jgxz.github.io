@@ -10,11 +10,7 @@
   <div class="welcome-page" @touchend="handleTouched">
     <div class="content">
       <div class="poem">
-        <div class="vertical-text title text-h4">歡慶元旦</div>
-        <div class="vertical-text first text-h3">龍騰獅舞賀豐年，</div>
-        <div class="vertical-text second text-h3">四大天王展新顏。</div>
-        <div class="vertical-text third text-h3">靈性盛宴迎賓客，</div>
-        <div class="vertical-text fourth text-h3">百相萬行金剛禪。</div>
+        <img src="../assets/poem.png" />
       </div>
       <div class="tap-screen">点击屏幕</div>
       <div class="source">南天极地大雷音寺</div>
@@ -24,40 +20,13 @@
 
 <style scoped lang="scss">
   .poem {
-    color: rgba(226, 8, 117, 0.959);
+    display: flex;
+    justify-content: center;
   }
-  .title {
-    position: absolute;
-    top: 25vh;
-    right: 14vw;
-  }
-
-  .first {
-    position: absolute;
-    top: 15vh;
-    right: 29vw;
-  }
-
-  .second {
-    position: absolute;
-    top: 15vh;
-    right: 44vw;
-  }
-
-  .third {
-    position: absolute;
-    top: 15vh;
-    right: 59vw;
-  }
-
-  .fourth {
-    position: absolute;
-    top: 15vh;
-    right: 74vw;
-  }
-
-  .vertical-text {
-    writing-mode: vertical-rl;
+  .poem img {
+    width: 80%;
+    position: relative;
+    top: 40px;
   }
 
   .welcome-page .tap-screen {
@@ -74,7 +43,7 @@
     margin: auto;
     width: 45vw;
     /* height: 68vh; */
-    font-size: 2rem;
+    font-size: 1rem;
     /*line-height: 4.5vh;*/
     color: rgb(17, 4, 4);
     padding-top: 25vh;
@@ -85,6 +54,9 @@
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box;
+    -webkit-animation: tap-screen-text 1s infinite alternate;
+    -moz-animation: tap-screen-text 1s infinite alternate;
+    animation: tap-screen-text 1s infinite alternate;
   }
 
   .welcome-page .tap-screen:before {
@@ -121,6 +93,14 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes tap-screen-text {
+    0% {
+      -webkit-transform: scale(0.8, 0.8);
+      -moz-transform: scale(0.8, 0.8);
+      transform: scale(0.8, 0.8);
     }
   }
 
