@@ -73,18 +73,17 @@
         <div class="logo">
           <img src="../assets/logo.png" />
         </div>
-        <div class="comment">
-          <div class="text-h5">恭祝敬愛的 薄伽梵 智及維摩詰 師尊、</div>
-          <br />
-          <div class="text-h5">
-            恭祝敬愛的 薄伽梵 智及維摩詰 師尊、
+        <div class="comment marquee">
+          <p class="text-h5">
+            恭祝敬愛的 薄伽梵 智及維摩詰 師尊、<br />
             全世界金剛兄弟姐妹、長老、上師、行者： 新年快樂！吉祥圓滿！
-          </div>
-          <br />
-          <div class="text-h6">
-            南天極地大雷音金剛禪寺弟子 虔誠供奉 2023.1.1
-          </div>
+            <br />
+            <span class="text-h6"
+              >南天極地大雷音金剛禪寺弟子 虔誠供奉 2023.1.1</span
+            >
+          </p>
         </div>
+
         <div class="annotation text-caption">配樂：金剛聖源轉世者《龍樂》</div>
       </q-carousel-slide>
       <template v-slot:control>
@@ -131,5 +130,26 @@
   .annotation {
     position: absolute;
     bottom: 20px;
+  }
+
+  .marquee {
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100px;
+
+    p {
+      padding-left: 0;
+      padding-top: 110px;
+      animation: marquee 15s linear infinite;
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, -100%);
+    }
   }
 </style>
