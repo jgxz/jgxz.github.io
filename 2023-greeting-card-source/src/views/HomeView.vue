@@ -8,13 +8,14 @@
   const musicDiskRef = ref<InstanceType<typeof MusicDisk>>()
   const isShowArrows = ref(false)
   const isShowNavigation = ref(false)
-
   const slide = ref(0)
 
   const autoplay = ref(false)
   const fullscreen = ref(true)
 
   const handleWelcomeTouched = () => {
+    console.log("p")
+
     musicDiskRef.value?.play()
     autoplay.value = true
     carousel.value?.next()

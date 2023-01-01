@@ -15,7 +15,8 @@
   })
 
   const handleTouched = () => {
-    if (audio.value?.paused) {
+    var classs = musicPlay.getAttribute("class")
+    if (classs === "first_play") {
       audio.value?.play()
       audioClass.value = classPlay
       setTimeout(function () {
@@ -46,7 +47,10 @@
   }
 
   const play = () => {
-    audio.value?.play()
+    var classs = musicPlay.getAttribute("class")
+    if (classs !== "first_play") {
+      handleTouched()
+    }
   }
 
   defineExpose({ play })
@@ -54,7 +58,11 @@
 
 <template>
   <div class="music" @touchend="handleTouched">
-    <img id="music_play" class="first" src="../assets/music_pointer.png" />
+    <img
+      id="music_play"
+      class="first first_no_play"
+      src="../assets/music_pointer.png"
+    />
     <img id="music" src="../assets/music_disk.svg" />
     <audio ref="audio" autoplay="true" loop>
       <source src="../assets/rise_of_dragon.mp3" type="audio/mpeg" />

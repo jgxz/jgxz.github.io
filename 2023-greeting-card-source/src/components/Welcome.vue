@@ -78,7 +78,7 @@
     position: absolute;
     background-size: 100%;
     /* top: 0; */
-    bottom: 250px;
+    bottom: 15vh;
     left: 0;
     right: 0;
     margin: auto;
