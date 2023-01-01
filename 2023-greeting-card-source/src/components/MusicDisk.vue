@@ -17,7 +17,7 @@
   const handleTouched = () => {
     var classs = musicPlay.getAttribute("class")
     if (classs === "first_play") {
-      audio.value?.play()
+      audio.value?.pause()
       audioClass.value = classPlay
       setTimeout(function () {
         if (musicPlay) {
@@ -29,7 +29,7 @@
         }
       }, 1000)
     } else {
-      audio.value?.pause()
+      audio.value?.play()
       audioClass.value = classStop
       if (musicPlay) {
         musicPlay.setAttribute("class", "first_play")
