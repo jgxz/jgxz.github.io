@@ -23,53 +23,43 @@
 </template>
 
 <style scoped lang="scss">
+  .poem {
+    color: rgba(226, 8, 117, 0.959);
+  }
   .title {
     position: absolute;
     top: 25vh;
-    right: 18vw;
+    right: 14vw;
   }
 
   .first {
     position: absolute;
     top: 15vh;
-    right: 33vw;
+    right: 29vw;
   }
 
   .second {
     position: absolute;
     top: 15vh;
-    right: 48vw;
+    right: 44vw;
   }
 
   .third {
     position: absolute;
     top: 15vh;
-    right: 63vw;
+    right: 59vw;
   }
 
   .fourth {
     position: absolute;
     top: 15vh;
-    right: 78vw;
+    right: 74vw;
   }
 
   .vertical-text {
     writing-mode: vertical-rl;
   }
 
-  .welcome-page {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
   .welcome-page .tap-screen {
     display: flex;
     justify-content: center;

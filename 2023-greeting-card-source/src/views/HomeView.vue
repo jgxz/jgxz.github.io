@@ -8,17 +8,16 @@
   const musicDiskRef = ref<InstanceType<typeof MusicDisk>>()
   const isShowArrows = ref(false)
   const isShowNavigation = ref(false)
+  const isSwipeable = ref(false)
   const slide = ref(0)
 
   const autoplay = ref(false)
   const fullscreen = ref(true)
 
   const handleWelcomeTouched = () => {
-    console.log("p")
-
     musicDiskRef.value?.play()
-    autoplay.value = true
-    carousel.value?.next()
+    autoplay.value = isSwipeable.value = true
+    setTimeout(() => carousel.value?.next(), 200)
   }
 
   const handleSlidesTransition = () => {
@@ -26,12 +25,14 @@
       isShowArrows.value = true
       isShowNavigation.value = true
     } else {
+      isSwipeable.value = false
       isShowArrows.value = false
       isShowNavigation.value = false
     }
 
     if (slide.value === 7) {
       autoplay.value = false
+      isShowNavigation.value = false
     }
   }
 </script>
@@ -47,7 +48,7 @@
       vertical
       transition-prev="slide-down"
       transition-next="slide-up"
-      swipeable
+      :swipeable="isSwipeable"
       animated
       control-color="white"
       navigation-icon="radio_button_unchecked"
