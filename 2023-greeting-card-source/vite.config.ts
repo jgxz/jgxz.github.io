@@ -21,6 +21,9 @@ const vitestConfig: VitestUserConfigInterface = {
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/2023-greeting-card/",
+  build: {
+    outDir: "../2023-greeting-card",
+  },
   plugins: [
     vue({
       template: { transformAssetUrls },
